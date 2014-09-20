@@ -1,2 +1,1 @@
-cs50_h_2013
-===========
+this is cs 50 from harvard 2012/2013.
