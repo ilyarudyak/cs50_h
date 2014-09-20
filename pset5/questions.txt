@@ -1,0 +1,29 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis? Pneumonoultramicroscopicsilicovolcanoconiosis is, according to the Oxford English Dictionary, "a factitious word alleged to mean 'a lung disease caused by the inhalation of very fine silica dust, causing inflammation in the lungs.'"
+
+1.  According to its man page, what does `getrusage` do? getrusage()  returns  resource  usage measures for who, which can be one of the following: RUSAGE_SELF etc.
+
+2.  Per that same man page, how many members are in a variable of type `struct rusage`? 16
+
+3.  Why do you think we pass `before` and `after` by reference (instead of by value) to `calculate`, even though we're not changing their contents? getrusage() use rusage *.
+
+4.  Explain as precisely as possible, in a paragraph or more, how `main` goes about reading words from a file. In other words, convince us that you indeed understand how that function's `for` loop works. 
+
+5.  Why do you think we used `fgetc` to read each word's characters one at a time rather than use `fscanf` with a format string like `"%s"` to read whole words at a time? Put another way, what problems might arise by relying on `fscanf` alone? we check each symbol while get it, so its better to use function to get 1 symbol per call.
+
+6.  Why do you think we declared the parameters for `check` and `load` as `const`? in order not to change them in the program.
+
+7.  What data structure(s) did you use to implement your spell-checker? Be sure not to leave your answer at just "hash table," "trie," or the like. Expound on what's inside each of your "nodes." Hash table.
+
+typedef struct node 
+{
+    char word[LENGTH + 1];
+    struct node *next;
+} 
+node;
+
+8.  How slow was your code the first time you got it working correctly? about 2.5.
+
+9.  What kinds of changes, if any, did you make to your code over the course of the week in order to improve its performance? 1) increased size of hash table up to ~10K, 2) used djb2 hash function.
+
+10. Do you feel that your code has any bottlenecks that you were not able to chip away at?
+no
